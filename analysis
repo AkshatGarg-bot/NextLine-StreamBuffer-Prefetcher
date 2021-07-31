@@ -1,0 +1,105 @@
+HITS AND MISSES
+
+With prefetcher:-
+gzip :-
+l1 stats             hits:-1601328          misses:-803892   %hits:-66.57
+l2 stats             hits:-2770          misses:- 797013	%hits:-0.34	
+prefetcher           hits:- 4109         misses:-  799783	%hits:-0.51
+
+gcc :-
+l1 stats             hits:-1963712          misses:-3193118	%hits:- 38.07
+l2 stats             hits:-  1348919         misses:-144788	%hits:- 90.3
+prefetcher           hits:-  1699411        misses:-  1493707	%hits:-53.22
+
+mcf :-
+l1 stats             hits:- 32413         misses:-4330967	%hits:-7.4
+l2 stats             hits:- 6221         misses:-1619739	%hits:-3.4
+prefetcher           hits:- 2705007         misses:-  1625960	%hits:-62.4
+
+swim :-
+l1 stats             hits:-  1412610        misses:-1619320	%hits:-46.5
+l2 stats             hits:-  907464        misses:- 114852	%hits:-88.7	
+prefetcher           hits:-  597004        misses:-1022316	%hits:-36.8
+
+twolf :-
+l1 stats             hits:-  1229762        misses:-1184356	%hits:- 50.9
+l2 stats             hits:-  811878        misses:- 11814	%hits:- 98.5	
+prefetcher           hits:-  360664        misses:-823692	%hits:- 30.4
+  
+without prefetcher
+
+gzip
+l1 stats        hits:-   1596740          misses:-808480	%hits:-66.38
+l2 stats        hits:-   10987	          misses:-797493	%hits:-1.3
+
+gcc
+l1 stats        hits:-1883643             misses:-3273187	%hits:- 36.5
+l2 stats        hits:-   3046490          misses:-226697	%hits:-93.07
+
+mcf
+l1 stats        hits:-33666             misses:-4329714	%hits:-7.7
+l2 stats        hits:-11610             misses:-4318104	%hits:-2.6
+
+swim
+l1 stats        hits:-1062426             misses:-1969504	%hits:-35.04
+l2 stats        hits:-   1765890          misses:-203614	%hits:-89.66
+
+twolf
+l1 stats        hits:-1649056             misses:-765062	%hits:-68.3
+l2 stats        hits:-   736586          misses:-28476	%hits:-96.2
+
+champsimp stats without prefetcher
+
+gzip:-
+L1D TOTAL     ACCESS:   11948096  HIT:    7145756  MISS:    4802340 	%hits:-59.8
+L2C TOTAL     ACCESS:    7351465  HIT:    2849729  MISS:    4501736	%hits:-38.7
+
+gcc
+L1D TOTAL     ACCESS:   11955104  HIT:    5815976  MISS:    6139128	%hits:-48.6
+L2C TOTAL     ACCESS:    9766400  HIT:    7582625  MISS:    2183775	%hits:-77.6
+
+mcf
+L1D TOTAL     ACCESS:   11821666  HIT:    5452897  MISS:    6368769	%hits:-46.12
+L2C TOTAL     ACCESS:    9882968  HIT:    2975526  MISS:    6907442	%hits:-30
+
+swim
+L1D TOTAL     ACCESS:   11952991  HIT:    5894832  MISS:    6058159	%hits:-49.31
+L2C TOTAL     ACCESS:    9590600  HIT:    6934742  MISS:    2655858	%hits:-72
+
+twolf
+L1D TOTAL     ACCESS:   11962186  HIT:    5520622  MISS:    6441564	%hits:-46.1
+L2C TOTAL     ACCESS:   10236917  HIT:    8143775  MISS:    2093142	%hits:-79	
+
+champsim stats with next line prefetcher
+
+gzip:
+L1D TOTAL     ACCESS:   11947986  HIT:    7145666  MISS:    4802320	%hits:59.8
+L2C TOTAL     ACCESS:   11184918  HIT:    3347540  MISS:    7837378	%hits:30	
+L2C PREFETCH  ACCESS:    3833492  HIT:     598342  MISS:    3235150	%hits:15.6
+only l2c      ACCESS:  7351426    HIT:     2749198 MISS:    4602228	%HITS:37.3 
+
+gcc:
+L1D TOTAL     ACCESS:   11954718  HIT:    5816020  MISS:    6138698	%hits:48.6	
+L2C TOTAL     ACCESS:   14942452  HIT:   10569836  MISS:    4372616	%hits:70.7
+L2C PREFETCH  ACCESS:    5176573  HIT:    3340134  MISS:    1836439	%hits:64.5
+only l2c	ACCESS: 9765879   HIT:    7229702  MISS: 2536177	%HITS:74.0
+
+mcf:
+L1D TOTAL     ACCESS:   11822153  HIT:    5453431  MISS:    6368722	%hits:46.12
+L2C TOTAL     ACCESS:   15225476  HIT:    3543709  MISS:   11681767	%hits:23.27
+L2C PREFETCH  ACCESS:    5342529  HIT:     621620  MISS:    4720909	%hits:11.6
+only l2c	ACCESS:   9882947     HIT   2922089   MISS 6960858	%HITS:29.5
+
+swim
+L1D TOTAL     ACCESS:   11952682  HIT:    5894572  MISS:    6058110	%hits:49.3
+L2C TOTAL     ACCESS:   14672754  HIT:    9702630  MISS:    4970124	%hits:66.1	
+L2C PREFETCH  ACCESS:    5081854  HIT:    2898155  MISS:    2183699	%hits:57
+only l2c	ACCESS:  9590900      HIT   6804475   MISS 2786425	%HITS:70.9
+
+twolf:
+L1D TOTAL     ACCESS:   11961488  HIT:    5520010  MISS:    6441478	%hits:46.14
+L2C TOTAL     ACCESS:   15639639  HIT:   11427251  MISS:    4212388	%hits:73
+L2C PREFETCH  ACCESS:    5402923  HIT:    3567004  MISS:    1835919	%hits:66.01
+only l2c	ACCESS: 10236716       HIT 7860247     MISS 2376469	%HITS:76.7
+
+Prefetcher stats are included in the l2 total stats.
